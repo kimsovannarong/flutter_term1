@@ -7,18 +7,18 @@ String bracketsMatching(String input) {
     '{': '}',
   };
 
-  for (var char in input.split('')) {
+  for (var character in input.split('')) {
     // check open bracket
-    if (brackets.containsKey(char)) {
-      stack.add(char);
+    if (brackets.containsKey(character)) {
+      stack.add(character);
 
-    } else if (brackets.containsValue(char)) {
+    } else if (brackets.containsValue(character)) {
       if (stack.isEmpty) {
         return "Not balanced";
       }
-      String lOpenBracket = stack.last;
+      String lastBracket = stack.last;
       // Check matching bracket
-      if (brackets[lOpenBracket] != char) {
+      if (brackets[lastBracket] != character) {
         return "Not balanced";
       }
       stack.removeLast();
