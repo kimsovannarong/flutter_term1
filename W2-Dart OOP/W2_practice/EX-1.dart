@@ -26,7 +26,7 @@ class Employee {
       : _skills = [Skill.FLUTTER, Skill.DART];
   
     void printDetails() {
-    print('Employee: $_name,\n Base Salary: \$${_baseSalary},\n Skills: ${_skills.map((s) => s.toString()).join(', ')}');
+    print('Employee: $_name,\n Base Salary: \$${_baseSalary},\n Skills: ${ _skills.map((s) => s.toString().split('.').last).join(', ')}');
   }
 
   

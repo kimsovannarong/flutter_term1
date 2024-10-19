@@ -33,7 +33,7 @@ class BankAccount {
     if (_balance >= amount) {  
       _balance -= amount;
     } else {
-      print("Insufficient balance");
+      print("Insufficient balance for withdraw");
     }
     return _balance;
   }
@@ -80,18 +80,19 @@ void main() {
   print(narongAcc.balance); // Balance after credit: $100
   narongAcc.Withdraw(50);
   print(narongAcc.balance); // Balance: $50
+   try {
+    narongAcc.Withdraw(75); // This will throw an exception
+  } catch (e) {
+    print(e); // Output: Insufficient balance for withdrawal!
+  }
+
+  try {
+    myBank.createAccount(100, 'Honlgy'); // This will throw an exception
+  } catch (e) {
+    print(e); // Output: Account with ID 100 already exists!
+  }
 }
 
 
-  // try {
-  //   ronanAccount.withdraw(75); // This will throw an exception
-  // } catch (e) {
-  //   print(e); // Output: Insufficient balance for withdrawal!
-  // }
 
-  // try {
-  //   myBank.createAccount(100, 'Honlgy'); // This will throw an exception
-  // } catch (e) {
-  //   print(e); // Output: Account with ID 100 already exists!
-  // }
 
