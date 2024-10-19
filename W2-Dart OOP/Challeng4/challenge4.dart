@@ -1,9 +1,8 @@
 class Distance{
   final double distance;
-  final double distance_ms;
-  Distance.cms(this.distance):distance_ms = distance/100;
-  Distance.ms(this.distance):distance_ms = distance;
-  Distance.kms(this.distance):distance_ms = distance*1000;
+  Distance.cms(int distance):distance_ms = distance/100;
+  Distance.ms(int distance): distance_ms = distance;
+  Distance.kms(int distance): distance_ms = distance*1000;
   double get cms{
     return distance_ms * 100;
   }
