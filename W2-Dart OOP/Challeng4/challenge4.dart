@@ -1,23 +1,28 @@
-class Distance{
-  final double distance;
-  Distance.cms(int distance):distance_ms = distance/100;
-  Distance.ms(int distance): distance_ms = distance;
-  Distance.kms(int distance): distance_ms = distance*1000;
-  double get cms{
-    return distance_ms * 100;
-  }
-    double get ms{
-    return distance_ms;
-  }
-    double get kms{
-    return distance_ms /1000;
-  }
-  Distance operator+( Distance other){
-     return Distance.ms(this.distance_ms + other.distance_ms); 
+class Distance {
+  final double distanceMs; 
+
+  Distance.cms(double distance) : distanceMs = distance / 100;
+  Distance.ms(double distance) : distanceMs = distance;
+  Distance.kms(double distance) : distanceMs = distance * 1000;
+
+  double get cms {
+    return distanceMs * 100;
+  } 
+  double get ms {
+    return distanceMs * 100;
+  } 
+  double get kms {
+    return distanceMs /1000;
+  } 
+
+  // Operator overloading for adding two Distance objects
+  Distance operator +(Distance other) {
+    return Distance.ms(this.distanceMs + other.distanceMs);
   }
 }
+
 void main() {
-  Distance d1=Distance.kms(3.4);
-  Distance d2=Distance.ms(1000);
-  print((d1+d2).kms);
+  Distance d1 = Distance.kms(3.4); 
+  Distance d2 = Distance.ms(1000); 
+  print((d1 + d2).kms); 
 }
